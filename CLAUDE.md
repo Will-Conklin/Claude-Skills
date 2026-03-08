@@ -26,6 +26,12 @@ This repo stores skills that extend Claude's capabilities. A "skill" is a self-c
 - Work on the branch specified at the start of a session
 - Never push to `main` directly
 
+### Commit Conventions
+
+- **One commit per unit of work.** Each plan unit or backlog item gets its own commit. Do not batch multiple units into a single commit.
+- Commit as soon as a unit is complete and verified — do not accumulate changes across units before committing.
+- If a single unit touches unrelated files (e.g., the skill file plus a BACKLOG.md update), that is fine — they are part of the same unit. What to avoid is mixing two separate units into one commit.
+
 ## Documentation
 
 See `docs/CLAUDE.md` for the full documentation structure and how to keep it up to date.
