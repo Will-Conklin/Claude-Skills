@@ -1,7 +1,7 @@
 # Backlog
 
 Prioritized list of ideas and work items. Items here have not yet been planned.
-When an item is ready to execute, move it into a plan file under `plans/`.
+When an item is ready to execute, move it into a plan file under `docs/plans/`.
 
 ## Format
 

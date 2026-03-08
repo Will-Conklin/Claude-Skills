@@ -10,14 +10,14 @@ This repo stores skills that extend Claude's capabilities. A "skill" is a self-c
 
 ### Picking Up Work
 
-1. Check `BACKLOG.md` for prioritized items
-2. Check `plans/` for active plans with scoped units of work
+1. Check `docs/BACKLOG.md` for prioritized items
+2. Check `docs/plans/` for active plans with scoped units of work
 3. Each plan unit is self-contained and can be worked on independently or delegated to a separate agent
 
 ### Starting a New Body of Work
 
-1. Add the idea to `BACKLOG.md` if it's not there yet
-2. When ready to begin, create a plan file in `plans/` following the template in `plans/README.md`
+1. Add the idea to `docs/BACKLOG.md` if it's not there yet
+2. When ready to begin, create a plan file in `docs/plans/` following the template in `docs/plans/README.md`
 3. Break the plan into discrete units — each unit should be independently completable
 
 ### Branch Conventions
@@ -30,7 +30,7 @@ This repo stores skills that extend Claude's capabilities. A "skill" is a self-c
 
 - **One commit per unit of work.** Each plan unit or backlog item gets its own commit. Do not batch multiple units into a single commit.
 - Commit as soon as a unit is complete and verified — do not accumulate changes across units before committing.
-- If a single unit touches unrelated files (e.g., the skill file plus a BACKLOG.md update), that is fine — they are part of the same unit. What to avoid is mixing two separate units into one commit.
+- If a single unit touches unrelated files (e.g., the skill file plus a docs/BACKLOG.md update), that is fine — they are part of the same unit. What to avoid is mixing two separate units into one commit.
 
 ## Documentation
 

@@ -147,4 +147,4 @@ Claude fetches unread counts and recent messages from each configured account an
 - Gmail labels with spaces must be quoted or escaped depending on the MCP tool's API
 - OAuth tokens expire; if Claude loses access, re-run the auth flow from Step 3
 - The Gmail API `gmail.modify` scope allows reading and labeling but not permanent deletion — use `gmail.trash` to move to trash if needed (requires updating the OAuth scope and re-authenticating)
-- This skill has not been verified end-to-end; complete Unit 6 of `plans/gmail-multi-account-mcp.md` to validate
+- This skill has not been verified end-to-end; complete Unit 6 of `docs/plans/gmail-multi-account-mcp.md` to validate

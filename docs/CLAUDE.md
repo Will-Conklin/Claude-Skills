@@ -8,16 +8,16 @@ This file describes how documentation is organized in this repository and how to
 |---|---|
 | `CLAUDE.md` | Root instructions for Claude — repo overview, workflow conventions |
 | `docs/CLAUDE.md` | This file — documentation structure and maintenance guide |
-| `BACKLOG.md` | Prioritized list of ideas and work items not yet planned |
-| `plans/README.md` | Template and conventions for plan files |
-| `plans/<name>.md` | Individual plan files for active or completed bodies of work |
+| `docs/BACKLOG.md` | Prioritized list of ideas and work items not yet planned |
+| `docs/plans/README.md` | Template and conventions for plan files |
+| `docs/plans/<name>.md` | Individual plan files for active or completed bodies of work |
 | `skills/README.md` | Skill file format spec and copyable template |
 | `skills/<name>.md` | Individual skill files — one per skill |
 
 ## Maintenance Rules
 
-- **BACKLOG.md** is the first stop for any new idea. Keep it honest — if something is done, remove it or mark it complete.
-- **Plans** are created when a backlog item is ready to be executed. Move the item from `BACKLOG.md` into a plan file, do not duplicate it.
+- **docs/BACKLOG.md** is the first stop for any new idea. Keep it honest — if something is done, remove it or mark it complete.
+- **Plans** are created when a backlog item is ready to be executed. Move the item from `docs/BACKLOG.md` into a plan file, do not duplicate it.
 - **Plan files** should stay accurate as work progresses. Mark units complete as they are finished.
 - **This file** should be updated whenever a new top-level documentation file or directory is added to the repo.
 

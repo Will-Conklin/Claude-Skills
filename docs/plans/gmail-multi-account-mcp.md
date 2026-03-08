@@ -144,7 +144,7 @@ A working Claude Cowork skill (`skills/gmail-multi-account.md`) that, when invok
 
 **Outputs:**
 - `skills/gmail-multi-account.md` — the skill file
-- `BACKLOG.md` updated (mark "Define skill file format" complete)
+- `docs/BACKLOG.md` updated (mark "Define skill file format" complete)
 - `README.md` updated with skill entry
 
 **Done when:** `skills/gmail-multi-account.md` is complete and follows the format template; README updated.
@@ -180,7 +180,7 @@ A working Claude Cowork skill (`skills/gmail-multi-account.md`) that, when invok
 | `docs/CLAUDE.md` | Edit — add `skills/` to file map |
 | `CLAUDE.md` | Edit — mention `skills/` directory |
 | `README.md` | Edit — add skill entry |
-| `BACKLOG.md` | Edit — mark "Define skill file format" complete |
+| `docs/BACKLOG.md` | Edit — mark "Define skill file format" complete |
 | `~/.gmail-mcp/gcp-oauth.keys.json` | Create (local, not committed) — OAuth credentials |
 | `~/Library/Application Support/Claude/claude_desktop_config.json` | Edit (local) — MCP server registration |
 
