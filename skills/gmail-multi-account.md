@@ -133,6 +133,13 @@ Claude calls the MCP tool to remove the specified label or move the message out 
 
 Claude fetches unread counts and recent messages from each configured account and presents a combined summary.
 
+## Verification
+
+- **Read inbox:** "List my 5 most recent unread emails from [address]" → Claude returns a list of up to 5 messages with sender, subject, date, and summary
+- **Search:** "Find emails from [sender] in the last 7 days" → Claude uses Gmail search syntax and returns matching messages or reports none found
+- **Label:** "Label that last email as 'Processed'" → Claude calls the MCP label tool and confirms; label appears in Gmail web UI
+- **Multi-account prompt:** with two accounts configured and no account specified → Claude asks which account to use
+
 ## Known Limitations
 
 - The `@gongrzhe/server-gmail-autoauth-mcp` server is a third-party open-source package. Review its source before use: [https://github.com/GongRzhe/Gmail-MCP-Server](https://github.com/GongRzhe/Gmail-MCP-Server)

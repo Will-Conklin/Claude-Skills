@@ -94,6 +94,13 @@ process_order(). Consider splitting into two commits:
   2. fix(orders): handle zero-quantity line items in process_order
 ```
 
+## Verification
+
+- **Staged changes present:** stage any file change, run `/commit-message-helper` → Claude produces a commit message with a valid type, scope, and summary line ≤72 chars
+- **Nothing staged:** run with no staged changes → Claude notes that nothing is staged and suggests running `git add` first
+- **Multi-concern diff:** stage changes to two unrelated files → Claude either produces a single message covering both or flags that the diff should be split
+- **Style matching:** in a repo with conventional commits history, run the skill → output type prefix matches the project's existing style
+
 ## Known Limitations
 
 - Works best when changes are already staged (`git add`). If nothing is staged, Claude will note that and suggest staging files first.

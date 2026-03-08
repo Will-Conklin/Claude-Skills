@@ -50,6 +50,13 @@ Reference setup instructions by linking to a plan file or external docs.
 
 Concrete example invocations and expected behavior.
 
+## Verification
+
+Manual spot-checks to confirm the skill works as expected. Each check should be
+independently runnable. Format:
+
+- **Check name:** prompt or action → expected result
+
 ## Known Limitations
 
 Any gaps, edge cases, or behaviors that differ from expectations.
@@ -88,6 +95,10 @@ List any required setup steps here, or write "None — no setup required."
 **Example 1:** ...
 
 **Example 2:** ...
+
+## Verification
+
+- **Basic check:** [prompt] → [expected result]
 
 ## Known Limitations
 
