@@ -11,6 +11,8 @@ This file describes how documentation is organized in this repository and how to
 | `BACKLOG.md` | Prioritized list of ideas and work items not yet planned |
 | `plans/README.md` | Template and conventions for plan files |
 | `plans/<name>.md` | Individual plan files for active or completed bodies of work |
+| `skills/README.md` | Skill file format spec and copyable template |
+| `skills/<name>.md` | Individual skill files — one per skill |
 
 ## Maintenance Rules
 

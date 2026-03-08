@@ -4,7 +4,7 @@ A personal repository for developing and maintaining Claude skills — reusable 
 
 ## Repository Purpose
 
-This repo stores skills that extend Claude's capabilities. A "skill" is a self-contained unit that Claude can be instructed to apply: a slash command, a workflow pattern, a tool configuration, or a reusable prompt template.
+This repo stores skills that extend Claude's capabilities. A "skill" is a self-contained unit that Claude can be instructed to apply: a slash command, a workflow pattern, a tool configuration, or a reusable prompt template. Skills live in the `skills/` directory; see `skills/README.md` for the format.
 
 ## Working in This Repo
 
