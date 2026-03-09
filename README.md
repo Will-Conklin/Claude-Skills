@@ -10,3 +10,4 @@ A personal repository for developing and maintaining Claude skills — reusable 
 | [ios-notes](skills/ios-notes.md) | workflow | Code | Create, read, and update iOS/macOS Notes from the terminal using AppleScript |
 | [pr-review](skills/pr-review.md) | workflow | Code | Reviews a pull request diff and produces structured feedback ready to post as a review comment |
 | [gmail-multi-account](skills/gmail-multi-account.md) | integration | Cowork | Read, search, and label emails across multiple Gmail inboxes via a local MCP server |
+| [retry-limit](skills/retry-limit.md) | prompt | Code | Instructs Claude to stop retrying after N consecutive failures and surface the blocker to the user |

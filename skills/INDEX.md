@@ -32,7 +32,7 @@ Skills that provide a reusable prompt template or system prompt pattern.
 
 | Name | Platform | Description | File |
 |---|---|---|---|
-| *(none yet)* | | | |
+| Retry Limit | Code | Instructs Claude to stop retrying after N consecutive failures on a task and surface the blocker to the user instead. | [retry-limit.md](retry-limit.md) |
 
 ---
 
