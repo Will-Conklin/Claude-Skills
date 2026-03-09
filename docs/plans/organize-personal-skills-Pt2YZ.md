@@ -37,8 +37,29 @@ iOS Notes and Gmail are personal-productivity tools unrelated to software develo
 
 ---
 
+### Unit 2: Add sync-skills skill
+
+**Goal:** Create a skill that copies the latest skills from this repo into any project's `.claude/skills/` directory.
+
+**Inputs:** This repo's `skills/` directory; GitHub repo URL.
+
+**Outputs:**
+- `skills/sync-skills.md` — the skill file
+- `skills/INDEX.md` updated with sync-skills row
+- `README.md` updated with sync-skills row
+
+**Steps:**
+1. Write `skills/sync-skills.md` with a prompt that shallow-clones this repo into a temp dir, copies `skills/*.md` (excluding README.md and INDEX.md) to the target path, then removes the temp dir.
+2. Add a row to `skills/INDEX.md` under Development Skills.
+3. Add a row to `README.md` skills table.
+
+**Done when:** `skills/sync-skills.md` exists, is registered in INDEX.md and README.md, and its prompt correctly describes the sync steps.
+
+---
+
 ## Status
 
 | Unit | Status | Notes |
 |---|---|---|
 | Unit 1: Reorganize skills/INDEX.md | complete | Added Personal Productivity section; merged Integration into it |
+| Unit 2: Add sync-skills skill | complete | `skills/sync-skills.md` created; registered in INDEX.md and README.md |

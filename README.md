@@ -11,3 +11,4 @@ A personal repository for developing and maintaining Claude skills — reusable 
 | [pr-review](skills/pr-review.md) | workflow | Code | Reviews a pull request diff and produces structured feedback ready to post as a review comment |
 | [gmail-multi-account](skills/gmail-multi-account.md) | integration | Cowork | Read, search, and label emails across multiple Gmail inboxes via a local MCP server |
 | [retry-limit](skills/retry-limit.md) | prompt | Code | Instructs Claude to stop retrying after N consecutive failures and surface the blocker to the user |
+| [sync-skills](skills/sync-skills.md) | workflow | Code | Fetch the latest skill files from the Claude-Skills repo and copy them into the current project's .claude/skills/ |

@@ -12,6 +12,7 @@ Skills for software development workflows.
 |---|---|---|---|---|
 | Commit Message Helper | workflow | Code | Generates well-structured git commit messages from staged diffs. | [commit-message-helper.md](commit-message-helper.md) |
 | PR Review | workflow | Code | Reviews a pull request diff for correctness, style, and potential issues, producing structured feedback ready to post as a review comment. | [pr-review.md](pr-review.md) |
+| Sync Skills | workflow | Code | Fetch the latest skill files from the Claude-Skills repo and copy them into the current project's .claude/skills/ directory. | [sync-skills.md](sync-skills.md) |
 
 ---
 
