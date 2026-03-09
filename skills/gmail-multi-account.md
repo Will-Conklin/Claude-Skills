@@ -69,30 +69,33 @@ This skill requires a locally-running Gmail MCP server connected to Claude Cowor
 
 ### Step 2: Register the MCP Server with Claude
 
-Add the following to `~/Library/Application Support/Claude/claude_desktop_config.json` under `mcpServers` (create the file if it doesn't exist):
+The MCP server lives in `mcp-servers/gmail/` in this repo. Add the following to your Claude Desktop config file:
+
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "gmail": {
       "command": "npx",
-      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
-      "env": {
-        "GMAIL_OAUTH_PATH": "/Users/YOUR_USERNAME/.gmail-mcp/gcp-oauth.keys.json",
-        "GMAIL_CREDENTIALS_PATH": "/Users/YOUR_USERNAME/.gmail-mcp/credentials.json"
-      }
+      "args": ["tsx", "/path/to/Claude-Skills/mcp-servers/gmail/src/index.ts"]
     }
   }
 }
 ```
 
-Replace `YOUR_USERNAME` with your macOS username (`whoami` in Terminal).
+Replace `/path/to/Claude-Skills` with the absolute path to this repo (e.g. `~/Claude-Skills`).
 
 ### Step 3: Authenticate Each Gmail Account
 
-Restart Claude Cowork. The first time you ask Claude to access email, a browser window will open for OAuth consent. Complete the flow for each Gmail account you want to connect. Tokens are stored locally in `~/.gmail-mcp/credentials.json`.
+Restart Claude. Ask Claude to run the `gmail_auth` tool with your email address:
 
-To add a second account, invoke the auth flow again and sign in with the second account when the browser opens.
+> "Authenticate alice@gmail.com with the Gmail MCP server"
+
+Claude will invoke `gmail_auth`, which starts a local HTTP server, opens your browser to Google's OAuth consent page, and saves the token to `~/.gmail-mcp/tokens/<email>.json` once you approve access.
+
+Repeat for each Gmail account. Tokens are stored per-account and persist across restarts.
 
 ### Verification
 
@@ -142,9 +145,8 @@ Claude fetches unread counts and recent messages from each configured account an
 
 ## Known Limitations
 
-- The `@gongrzhe/server-gmail-autoauth-mcp` server is a third-party open-source package. Review its source before use: [https://github.com/GongRzhe/Gmail-MCP-Server](https://github.com/GongRzhe/Gmail-MCP-Server)
-- Multi-account support depends on the MCP server's implementation — verify that your version supports multiple `account` parameters before relying on it for multiple inboxes
-- Gmail labels with spaces must be quoted or escaped depending on the MCP tool's API
-- OAuth tokens expire; if Claude loses access, re-run the auth flow from Step 3
-- The Gmail API `gmail.modify` scope allows reading and labeling but not permanent deletion — use `gmail.trash` to move to trash if needed (requires updating the OAuth scope and re-authenticating)
-- This skill has not been verified end-to-end; complete Unit 6 of `docs/plans/gmail-multi-account-mcp.md` to validate
+- `gmail_update_labels` accepts Gmail label IDs, not display names. Use `INBOX`, `UNREAD`, `STARRED`, or the opaque ID for custom labels (visible in Gmail settings URLs). A `gmail_list_labels` tool could be added in a future iteration.
+- OAuth tokens expire; if Claude loses access, re-run `gmail_auth` for the affected account.
+- The Gmail API `gmail.modify` scope allows reading and labeling but not permanent deletion — use `gmail.trash` to move to trash if needed (requires updating the OAuth scope and re-authenticating).
+- Multi-part MIME messages (HTML-only bodies) may return an empty body — the snippet field is used as a fallback.
+- This skill has not been verified end-to-end; complete Unit 6 of `docs/plans/gmail-custom-mcp.md` to validate.
