@@ -4,7 +4,10 @@
   "description": "Custom Gmail MCP server for Claude — auditable, self-owned, multi-account",
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.5.0",
@@ -13,6 +16,8 @@
     "zod": "^3.23.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.0"
+    "@types/node": "^25.3.5",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
   }
 }
