@@ -1,0 +1,18 @@
+{
+  "name": "gmail-mcp-server",
+  "version": "1.0.0",
+  "description": "Custom Gmail MCP server for Claude — auditable, self-owned, multi-account",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "googleapis": "^144.0.0",
+    "tsx": "^4.16.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
