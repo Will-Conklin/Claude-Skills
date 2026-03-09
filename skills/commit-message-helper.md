@@ -5,6 +5,8 @@ type: workflow
 platform: code
 version: 1.0.0
 description: Generates well-structured git commit messages from staged diffs.
+allowed-tools:
+  - Bash
 ---
 
 ## Invocation

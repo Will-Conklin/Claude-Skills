@@ -23,11 +23,19 @@ This file describes how documentation is organized in this repository and how to
 
 ## Adding a New Skill
 
+Before writing a skill file, check `skills/README.md` for the current frontmatter
+spec — it documents both the Claude Code SKILL.md fields and repo metadata fields.
+The spec should be treated as the source of truth; if official Claude Code docs
+diverge from it, update `skills/README.md` first, then apply changes to existing
+skills before writing the new one.
+
 When a new skill is built and merged:
 
-1. Add an entry in the root `README.md` describing it briefly
-2. If the skill came from a plan, mark the plan units complete
-3. Archive or close the plan if all units are done
+1. Add the skill file to `skills/` following the format in `skills/README.md`
+2. Add a row to the appropriate table in `skills/INDEX.md`
+3. Add an entry in the root `README.md`
+4. If the skill came from a plan, mark the plan units complete
+5. Archive or close the plan if all units are done
 
 ## Adding a New Document Type
 

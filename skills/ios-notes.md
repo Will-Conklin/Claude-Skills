@@ -5,6 +5,9 @@ type: workflow
 platform: code
 version: 1.0.0
 description: Create, read, and update iOS/macOS Notes from the terminal using AppleScript, with chunked read/write to handle large notes.
+argument-hint: "[action and note name]"
+allowed-tools:
+  - Bash
 ---
 
 ## Invocation
