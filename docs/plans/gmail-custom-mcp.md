@@ -31,8 +31,10 @@ Build a self-owned MCP server (TypeScript/Node.js) that handles Gmail OAuth 2.0 
 4. Add `tsconfig.json` (ESM target, `node16` module resolution)
 5. Write `src/index.ts` that creates an `McpServer`, registers a stub tool `gmail_list_emails`, and connects via `StdioServerTransport`
 6. Add a `start` script: `npx tsx src/index.ts`
-7. Register the server in `~/Library/Application Support/Claude/claude_desktop_config.json` pointing at the local script
-8. Restart Claude and verify the stub tool appears
+7. Add `.gitignore` inside `mcp-servers/gmail/` with entries: `node_modules/`, `dist/`
+8. Run `npm install` and commit `package-lock.json` to pin dependency versions
+9. Register the server in `~/Library/Application Support/Claude/claude_desktop_config.json` pointing at the local script
+10. Restart Claude and verify the stub tool appears
 
 **Done when:** Claude shows `gmail_list_emails` in its tool list when the server is running.
 
