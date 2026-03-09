@@ -73,7 +73,7 @@ osascript -e 'tell application "Notes" to get plaintext of note "Title"'
 
 ```js
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Title'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Title'})[0];
 const body = note.body();
 const chunkSize = 50000;
 let offset = 0;
@@ -83,14 +83,15 @@ while (offset < body.length) {
   offset += chunkSize;
 }
 // Return all chunks joined; Claude reassembles on the caller side
-chunks.join('');
+const result = chunks.join('');
+result;
 ```
 
 ### Append to note
 
 ```js
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Title'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Title'})[0];
 const existing = note.body();
 const addition = '<p>New paragraph.</p>';
 note.body = existing + '\n' + addition;
@@ -102,7 +103,7 @@ For large notes, read in chunks first (see above), reconstruct the full body in 
 
 ```js
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Title'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Title'})[0];
 let body = note.body();
 // Locate the section by its heading anchor and replace up to the next heading
 const start = body.indexOf('<h2>Status</h2>');
@@ -213,12 +214,14 @@ User: "Add 'Call dentist' to my 'Tasks' note"
 TMPFILE=$(mktemp /tmp/claude-notes-XXXXXX.js)
 cat > "$TMPFILE" << 'SCRIPT'
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Tasks'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Tasks'})[0];
 const body = note.body();
 // Find existing checklist and append, or add a new one
 const item = '<li class="todo">Call dentist</li>';
 if (body.includes('class="checklist"')) {
-  note.body = body.replace(/<\/ul>(?=[^<]*$)/, item + '</ul>');
+  // Insert before the last </ul> to append into the existing checklist
+  const lastClose = body.lastIndexOf('</ul>');
+  note.body = body.substring(0, lastClose) + item + body.substring(lastClose);
 } else {
   note.body = body + '\n<ul class="checklist">' + item + '</ul>';
 }
@@ -237,7 +240,7 @@ User: "Add an action item for @Sarah to review the Q1 report in my 'Sprint Revie
 TMPFILE=$(mktemp /tmp/claude-notes-XXXXXX.js)
 cat > "$TMPFILE" << 'SCRIPT'
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Sprint Review'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Sprint Review'})[0];
 note.body = note.body() + '\n<p>Action item for @Sarah: review the Q1 report.</p>';
 SCRIPT
 osascript "$TMPFILE"
@@ -256,7 +259,7 @@ User: "Read my 'Research Notes' note — it's very long"
 TMPFILE=$(mktemp /tmp/claude-notes-XXXXXX.js)
 cat > "$TMPFILE" << 'SCRIPT'
 const app = Application('Notes');
-const note = app.notes.whose({name: 'Research Notes'})[0];
+const note = app.defaultAccount.notes.whose({name: 'Research Notes'})[0];
 const body = note.body();
 const chunkSize = 50000;
 let offset = 0;
@@ -265,7 +268,8 @@ while (offset < body.length) {
   chunks.push(body.substring(offset, offset + chunkSize));
   offset += chunkSize;
 }
-chunks.join('\n---CHUNK---\n');
+const result = chunks.join('\n---CHUNK---\n');
+result;
 SCRIPT
 osascript "$TMPFILE"
 rm -f "$TMPFILE"

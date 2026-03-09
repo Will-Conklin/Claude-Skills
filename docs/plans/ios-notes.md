@@ -9,7 +9,7 @@ Deliver a `workflow`-type Claude Code skill (`skills/ios-notes.md`) that lets a 
 - **Platform:** iOS Notes syncs via iCloud and is accessible on macOS through the Notes app. Claude Code (a CLI tool running on macOS) can drive it via AppleScript or JXA (JavaScript for Automation) using `osascript`.
 - **No API keys or MCP servers required** — this is a pure workflow skill.
 - **Formatting:** In AppleScript, the `body` property of a note is HTML. The `plaintext` property gives plain text. Setting `body` to an HTML string updates the note. iOS Notes supports: bold title (first line), paragraphs, headings (`<h1>`, `<h2>`), checklists (`<ul class="checklist"><li class="todo">item</li></ul>`), and tables (`<table>`).
-- **Size limitation mitigation:** Large `osascript -e '...'` inline invocations can hit shell argument-length limits. Solution: write a temp JXA `.js` script and run it as `osascript /tmp/claude-notes-$$.js`, then delete it.
+- **Size limitation mitigation:** Large `osascript -e '...'` inline invocations can hit shell argument-length limits. Solution: write a temp JXA `.js` script via `TMPFILE=$(mktemp /tmp/claude-notes-XXXXXX.js)`, run it as `osascript "$TMPFILE"`, then delete it. Using `mktemp` avoids `$$`-expansion issues when the temp path is constructed outside a shell context.
 - **Chunked reads:** For large notes, read `note.body()` in slices via JXA `.substring(offset, offset+chunkSize)` in a loop.
 - **@mentions:** AppleScript can insert `@Name` text into a note body. The Notes app converts this to a live mention link when the user taps/clicks it in the app — the text insertion itself is enough to surface the mention. Claude inserts `@Name` in the appropriate HTML context and notes that resolution happens in the app UI.
 
