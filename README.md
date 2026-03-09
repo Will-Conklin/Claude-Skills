@@ -6,4 +6,6 @@ A personal repository for developing and maintaining Claude skills — reusable 
 
 | Skill | Type | Platform | Description |
 |---|---|---|---|
+| [commit-message-helper](skills/commit-message-helper.md) | workflow | Code | Generates well-structured git commit messages from staged diffs |
+| [pr-review](skills/pr-review.md) | workflow | Code | Reviews a pull request diff and produces structured feedback ready to post as a review comment |
 | [gmail-multi-account](skills/gmail-multi-account.md) | integration | Cowork | Read, search, and label emails across multiple Gmail inboxes via a local MCP server |

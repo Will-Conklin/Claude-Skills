@@ -21,6 +21,7 @@ Skills that define a multi-step process Claude follows to complete a task.
 | Name | Platform | Description | File |
 |---|---|---|---|
 | Commit Message Helper | Code | Generates well-structured git commit messages from staged diffs. | [commit-message-helper.md](commit-message-helper.md) |
+| PR Review | Code | Reviews a pull request diff for correctness, style, and potential issues, producing structured feedback ready to post as a review comment. | [pr-review.md](pr-review.md) |
 
 ---
 
