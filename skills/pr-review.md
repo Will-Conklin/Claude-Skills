@@ -5,6 +5,9 @@ type: workflow
 platform: code
 version: 1.0.0
 description: Reviews a pull request diff for correctness, style, and potential issues, producing structured feedback ready to post as a review comment.
+argument-hint: "[base-branch]"
+allowed-tools:
+  - Bash
 ---
 
 ## Invocation
