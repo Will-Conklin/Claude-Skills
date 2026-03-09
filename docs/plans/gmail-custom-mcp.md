@@ -165,12 +165,12 @@ Build a self-owned MCP server (TypeScript/Node.js) that handles Gmail OAuth 2.0 
 
 | Unit | Status | Notes |
 |---|---|---|
-| Unit 1: Scaffold MCP server project | pending | |
-| Unit 2: Google Cloud OAuth credentials | pending | May reuse existing credentials |
-| Unit 3: OAuth flow and token storage | pending | |
-| Unit 4: Gmail read and label tools | pending | |
-| Unit 5: Update skill file and old plan | pending | |
-| Unit 6: End-to-end verification | pending | |
+| Unit 1: Scaffold MCP server project | complete | `mcp-servers/gmail/` created with package-lock.json |
+| Unit 2: Google Cloud OAuth credentials | pending | Manual/user-executed step |
+| Unit 3: OAuth flow and token storage | complete | `src/auth.ts` — included in Unit 1 commit |
+| Unit 4: Gmail read and label tools | complete | `src/gmail.ts` — included in Unit 1 commit |
+| Unit 5: Update skill file and old plan | complete | Skill updated; old plan annotated as superseded |
+| Unit 6: End-to-end verification | pending | Requires Units 2 + local Claude Desktop setup |
 
 ## Dependency Order
 
