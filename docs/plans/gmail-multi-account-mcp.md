@@ -1,5 +1,7 @@
 # Plan: Gmail Multi-Account Email Skill (Claude Cowork, MCP)
 
+> **Superseded.** The MCP server approach in Units 3–4 used a third-party npm package (`@gongrzhe/server-gmail-autoauth-mcp`) with supply chain risks. See `docs/plans/gmail-custom-mcp.md` for the replacement plan that builds a self-owned, auditable MCP server. The skill file format defined in Unit 1 and the GCP credentials setup in Unit 2 remain valid and reusable.
+
 ## Context
 
 The built-in Gmail connector in Claude Cowork does not support multiple accounts. This plan delivers a Claude Cowork skill that reads email from multiple Gmail inboxes and supports label management, using a self-hosted Gmail MCP (Model Context Protocol) server as the integration layer. MCP is the standard protocol for Claude tool integrations and is the most direct, durable approach compared to AppleScript or direct IMAP scripting.
@@ -144,7 +146,7 @@ A working Claude Cowork skill (`skills/gmail-multi-account.md`) that, when invok
 
 **Outputs:**
 - `skills/gmail-multi-account.md` — the skill file
-- `BACKLOG.md` updated (mark "Define skill file format" complete)
+- `docs/BACKLOG.md` updated (mark "Define skill file format" complete)
 - `README.md` updated with skill entry
 
 **Done when:** `skills/gmail-multi-account.md` is complete and follows the format template; README updated.
@@ -180,7 +182,7 @@ A working Claude Cowork skill (`skills/gmail-multi-account.md`) that, when invok
 | `docs/CLAUDE.md` | Edit — add `skills/` to file map |
 | `CLAUDE.md` | Edit — mention `skills/` directory |
 | `README.md` | Edit — add skill entry |
-| `BACKLOG.md` | Edit — mark "Define skill file format" complete |
+| `docs/BACKLOG.md` | Edit — mark "Define skill file format" complete |
 | `~/.gmail-mcp/gcp-oauth.keys.json` | Create (local, not committed) — OAuth credentials |
 | `~/Library/Application Support/Claude/claude_desktop_config.json` | Edit (local) — MCP server registration |
 
