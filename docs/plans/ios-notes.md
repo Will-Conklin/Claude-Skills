@@ -133,6 +133,6 @@ Deliver a `workflow`-type Claude Code skill (`skills/ios-notes.md`) that lets a 
 
 | Unit | Status | Notes |
 |---|---|---|
-| Unit 1: Write the skill file | pending | |
-| Unit 2: Update index and README | pending | |
-| Unit 3: Mark backlog item complete | pending | |
+| Unit 1: Write the skill file | complete | |
+| Unit 2: Update index and README | complete | |
+| Unit 3: Mark backlog item complete | complete | |
