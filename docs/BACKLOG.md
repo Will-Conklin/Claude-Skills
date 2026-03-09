@@ -21,3 +21,4 @@ Use `[ ]` for open items and `[x]` for completed items (or just delete completed
 - [x] **First skill: commit message helper** — a skill that generates well-structured git commit messages from staged diffs, as a starting example to validate the skill format
 - [x] **Skill index** — a searchable index or registry of all skills in the repo, making it easy to discover what's available
 - [x] **PR review skill** — a workflow skill that reviews a pull request diff and produces structured, actionable feedback (blocking issues, non-blocking concerns, suggestions, praise)
+- [x] **iOS Notes skill** — a skill for creating and updating iOS notes that respects iOS note formatting conventions (title as first line, body text, checklists, tables) and can read/write note content in chunks to avoid hitting size limitations when working with large notes
