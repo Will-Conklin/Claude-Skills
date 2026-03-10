@@ -2,6 +2,10 @@
 
 A personal repository for developing and maintaining Claude skills — reusable prompts, tools, and workflows for use with Claude Code and Claude Cowork.
 
+## Setup
+
+New here? See **[docs/SETUP.md](docs/SETUP.md)** for how to install skills into a project and configure each skill and MCP server.
+
 ## Skills
 
 | Skill | Type | Platform | Description |
