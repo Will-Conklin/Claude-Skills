@@ -8,6 +8,7 @@ This file describes how documentation is organized in this repository and how to
 |---|---|
 | `CLAUDE.md` | Root instructions for Claude — repo overview, workflow conventions |
 | `docs/CLAUDE.md` | This file — documentation structure and maintenance guide |
+| `docs/SETUP.md` | User setup guide — how to install skills and configure each MCP |
 | `docs/BACKLOG.md` | Prioritized list of ideas and work items not yet planned |
 | `docs/plans/README.md` | Template and conventions for plan files |
 | `docs/plans/<name>.md` | Individual plan files for active or completed bodies of work |
