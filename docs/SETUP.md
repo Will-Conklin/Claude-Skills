@@ -41,6 +41,7 @@ rm /your/project/.claude/skills/README.md /your/project/.claude/skills/INDEX.md
 | [sync-skills](../skills/sync-skills.md) | `git` on PATH; internet connection |
 | [ios-notes](../skills/ios-notes.md) | macOS; Notes automation permission (one-time) |
 | [gmail-multi-account](../skills/gmail-multi-account.md) | Gmail MCP server; Google Cloud OAuth credentials |
+| [skylight-calendar](../skills/skylight-calendar.md) | Skylight MCP server; Skylight account credentials |
 
 ---
 
@@ -140,15 +141,84 @@ account.
 
 ---
 
-## 5. MCP Servers in This Repo
+## 5. Skylight MCP — Setup
+
+The `skylight-calendar` skill requires a locally-running Skylight MCP server.
+The server lives in `mcp-servers/skylight/` in this repo.
+
+### Prerequisites
+
+- Node.js installed (`node --version` should succeed)
+- A Skylight account (email and password)
+- Your Skylight frame ID
+- Claude Desktop or Claude Cowork with MCP support
+
+### Step 1: Set Up Credentials
+
+The Skylight MCP server reads credentials from environment variables. You can
+set them in your shell profile or pass them directly in the Claude config:
+
+- `SKYLIGHT_EMAIL` — your Skylight account email
+- `SKYLIGHT_PASSWORD` — your Skylight account password
+- `SKYLIGHT_FRAME_ID` — your Skylight frame/household ID
+- `SKYLIGHT_TIMEZONE` — optional, defaults to `America/New_York`
+
+### Step 2: Register the MCP Server with Claude
+
+Add the following to your Claude Desktop config file:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux:** `~/.config/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "skylight": {
+      "command": "npx",
+      "args": ["tsx", "/absolute/path/to/Claude-Skills/mcp-servers/skylight/src/index.ts"],
+      "env": {
+        "SKYLIGHT_EMAIL": "you@example.com",
+        "SKYLIGHT_PASSWORD": "your-password",
+        "SKYLIGHT_FRAME_ID": "your-frame-id",
+        "SKYLIGHT_TIMEZONE": "America/New_York"
+      }
+    }
+  }
+}
+```
+
+Replace `/absolute/path/to/Claude-Skills` with the actual path on your machine.
+
+### Step 3: Install Dependencies
+
+```bash
+cd /path/to/Claude-Skills/mcp-servers/skylight
+npm install
+```
+
+### Step 4: Verify
+
+Restart Claude and ask: *"Check my Skylight status."*
+
+Claude will invoke the `skylight_status` tool and report the server is running
+with your frame ID and authentication status.
+
+**Token caching:** After the first successful login, the auth token is cached at
+`~/.skylight-mcp/token.json`. If the token expires, the server automatically
+re-authenticates on the next request.
+
+---
+
+## 6. MCP Servers in This Repo
 
 | Server | Directory | Used by skill |
 |---|---|---|
 | Gmail | `mcp-servers/gmail/` | `gmail-multi-account` |
+| Skylight | `mcp-servers/skylight/` | `skylight-calendar` |
 
 ---
 
-## 6. Keeping Skills Up to Date
+## 7. Keeping Skills Up to Date
 
 Run `/sync-skills` in any project at any time to pull the latest versions from this
 repo. Existing skill files at the target path are overwritten automatically.
