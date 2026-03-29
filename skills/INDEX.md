@@ -24,6 +24,7 @@ Skills for personal-use tasks unrelated to software development.
 |---|---|---|---|---|
 | Gmail Multi-Account Reader | integration | Cowork | Read, search, and label emails across multiple Gmail inboxes using a local Gmail MCP server. | [gmail-multi-account.md](gmail-multi-account.md) |
 | iOS Notes | workflow | Code | Create, read, and update iOS/macOS Notes from the terminal using AppleScript, with chunked read/write to handle large notes. | [ios-notes.md](ios-notes.md) |
+| Skylight Calendar | integration | Cowork | Manage your Skylight smart calendar — events, chores, lists, tasks, and family — using a local Skylight MCP server. | [skylight-calendar.md](skylight-calendar.md) |
 
 ---
 

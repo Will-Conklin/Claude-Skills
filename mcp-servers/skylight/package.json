@@ -1,0 +1,22 @@
+{
+  "name": "skylight-mcp-server",
+  "version": "1.0.0",
+  "description": "Custom Skylight Calendar MCP server for Claude",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "tsx": "^4.16.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
